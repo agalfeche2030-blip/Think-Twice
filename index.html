@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Should I Do This?</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f7fa;
+      text-align: center;
+      padding: 50px;
+    }
+    input {
+      width: 80%;
+      padding: 10px;
+      margin: 15px 0;
+    }
+    button {
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+    #result {
+      margin-top: 20px;
+      font-size: 1.2em;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Should I Do This?</h1>
+  <p>Type your dilemma and let the app help you reflect.</p>
+
+  <input type="text" placeholder="Should I..." />
+  <br>
+  <button onclick="decide()">Help Me Decide</button>
+
+  <div id="result"></div>
+
+  <script>
+    const messages = [
+      "What choice would make you feel lighter?",
+      "Which option aligns with your long-term goals?",
+      "If no one was watching, what would you choose?",
+      "Choose the path that helps you grow.",
+      "Rest is also a productive choice."
+    ];
+
+    function decide() {
+      const random = Math.floor(Math.random() * messages.length);
+      document.getElementById("result").innerText = messages[random];
+    }
+  </script>
+
+</body>
+</html>
